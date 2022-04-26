@@ -1,7 +1,5 @@
 import java.io.*;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class JavaTraining3 {
     public static BufferedReader br = new BufferedReader
     (new InputStreamReader(System.in));
@@ -338,7 +336,7 @@ public class JavaTraining3 {
         }
 
         System.out.println("があります。");
-    }   
+    }
 
     //3-12
     public static void Three_Twelve() throws IOException
