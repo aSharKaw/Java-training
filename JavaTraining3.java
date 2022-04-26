@@ -8,21 +8,21 @@ public class JavaTraining3 {
 
     public static void main(String[] args) throws IOException
     {
-        Three_One();
-        Three_Two();
+        //Three_One();
+        //Three_Two();
         Three_Three();
         Three_Four();
-        Three_Five();
-        Three_Six();
-        Three_Seven_case1();
-        Three_Seven_case2();
-        Three_Seven_case3();
-        Three_Eight();
-        Three_Nine();
-        Three_Ten();
+        //Three_Five();
+        //Three_Six();
+        //Three_Seven_case1();
+        //Three_Seven_case2();
+        //Three_Seven_case3();
+        //Three_Eight();
+        //Three_Nine();
+        //Three_Ten();
         Three_Eleven();
-        Three_Twelve();
-        Three_Thirteen();
+        //Three_Twelve();
+        //Three_Thirteen();
     }
 
     public static void Three_One() throws IOException
@@ -72,9 +72,9 @@ public class JavaTraining3 {
         {
             System.out.println("xはyより大きい");
         }
-        else
+        else if(x < y)
         {
-            System.out.println("yはxより大きい");
+            System.out.println("xはyより小さい");
         }
     }
 
@@ -98,7 +98,7 @@ public class JavaTraining3 {
         }
         else
         {
-            System.out.println("yはxより大きい");
+            System.out.println("xはyより小さい");
         }
     }
 
@@ -303,49 +303,41 @@ public class JavaTraining3 {
         
         int month = Integer.parseInt(br.readLine());
 
-        System.out.println("入力値:" + month);
+        System.out.println(month + "月から年末までの祝日は");
 
         switch(month)
         {
+            //「指定月から”年末”までの祝日を表示する」なのでbreak要らない…
             default:
                 System.out.println("1〜12で入力してください。");
+                break;
             case 1:
-                System.out.println("1月の祝日は元旦、成人の日です。");
-                break;
+                System.out.println("元旦\n成人の日");
             case 2:
-                System.out.println("2月の祝日は建国記念の日です。");
-                break;
+                System.out.println("建国記念の日");
             case 3:
-                System.out.println("3月の祝日は春分の日です。");
-                break;
+                System.out.println("春分の日");
             case 4:
-                System.out.println("4月の祝日は昭和の日です。");
-                break;
+                System.out.println("昭和の日");
             case 5:
-                System.out.println("5月の祝日は憲法記念日、みどりの日、こどもの日です。");
-                break;
+                System.out.println("憲法記念日\nみどりの日\nこどもの日");
             case 6:
-                System.out.println("6月に祝日はありません。");
-                break;
+                //祝日無し
             case 7:
-                System.out.println("7月の祝日は海の日です。");
-                break;
+                System.out.println("海の日");
             case 8:
-                System.out.println("8月に祝日はありません。");
-                break;
+                //祝日無し
             case 9:
-                System.out.println("9月の祝日は敬老の日、秋分の日です。");
-                break;  
+                System.out.println("敬老の日\n秋分の日"); 
             case 10:
-                System.out.println("10月の祝日は体育の日です。");
-                break;
+                System.out.println("体育の日");
             case 11:
-                System.out.println("11月の祝日は文化の日、勤労感謝の日です。");
-                break;  
+                System.out.println("文化の日\n勤労感謝の日");
             case 12:
-                System.out.println("12月の祝日は天皇誕生日です。");
-                break;
+                System.out.println("天皇誕生日");
         }
+
+        System.out.println("があります。");
     }   
 
     //3-12
