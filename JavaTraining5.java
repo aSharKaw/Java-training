@@ -6,20 +6,20 @@ public class JavaTraining5 {
     
     public static void main(String[] args) throws IOException
     {
-        //Five_One();
-        //Five_Two();
-        //Five_Three();
-        //Five_Four();
-        //Five_Five();
-        //Five_Six();
-        //Five_Seven();
+        Five_One();
+        Five_Two();
+        Five_Three();
+        Five_Four();
+        Five_Five();
+        Five_Six();
+        Five_Seven();
         Five_Eight();
     }
 
     //5-1
     public static void Five_One() throws IOException
     {
-        System.out.println("5-1");
+        System.out.println("5-1:10個の数値を入力し、各々の数を2倍にして表示しなさい");
 
         int num[] = new int[10];
 
@@ -38,7 +38,7 @@ public class JavaTraining5 {
     //5-2
     public static void Five_Two() throws IOException
     {
-        System.out.println("\n5-2");
+        System.out.println("\n5-2:10個の数値を入力し、入力した順と逆順で表示しなさい");
 
         int num[] = new int[10];
 
@@ -57,7 +57,7 @@ public class JavaTraining5 {
     //5-3
     public static void Five_Three() throws IOException
     {
-        System.out.println("\n5-3");
+        System.out.println("\n5-3:10個の数値を入力し、偶数と奇数に分類して表示しなさい");
 
         int num[] = new int[10];
 
@@ -91,7 +91,7 @@ public class JavaTraining5 {
     //5-4
     public static void Five_Four() throws IOException
     {
-        System.out.println("\n5-4");
+        System.out.println("\n5-4:数値を繰り返し入力し、100を超えるか10回の入力後、入力された数値をすべて表示しなさい");
 
         int num[] = new int[10];
         int sum_num, count;
@@ -121,7 +121,7 @@ public class JavaTraining5 {
     //5-5
     public static void Five_Five() throws IOException
     {
-        System.out.println("\n5-5");
+        System.out.println("\n5-5:入力された数値を 16 桁の２進数で表示するプログラムを作成しなさい");
 
         int value = Integer.parseInt( br.readLine() );
 
@@ -141,7 +141,7 @@ public class JavaTraining5 {
     //5-6
     public static void Five_Six()
     {
-        System.out.println("\n5-6");
+        System.out.println("\n5-6:九九表を表示するプログラムを作成しなさい");
 
         int kuku[][] = new int[9][9];
 
@@ -161,7 +161,7 @@ public class JavaTraining5 {
     //5-7
     public static void Five_Seven() throws IOException
     {
-        System.out.println("\n5-7");
+        System.out.println("\n5-7:1~9の数値を2つ入力し、その積を表示しなさい。ただし、積は九九表の配列を予め作成し利用しなさい");
 
         int kuku[][] = new int[9][9];
 
@@ -183,7 +183,7 @@ public class JavaTraining5 {
     //5-8
     public static void Five_Eight() throws IOException
     {
-        System.out.println("\n5-8");
+        System.out.println("\n5-8:数値を10回入力し、小さい順に並び変えて表示しなさい");
 
         int num[] = new int[10];
 
