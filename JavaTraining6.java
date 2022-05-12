@@ -18,8 +18,7 @@ public class JavaTraining6 {
 
         Six_Four_run();
 
-        System.out.println("\n6-5:指定した文字で指定サイズの三角形を表示する");
-        Six_Five(4, '箱');
+        Six_Five_run();
 
         Six_Six_run();
 
@@ -107,6 +106,22 @@ public class JavaTraining6 {
             }
             System.out.println();
         }
+
+        //表示調整
+        System.out.println();
+    }
+
+    //6-5 問題実行用
+    static void Six_Five_run()
+    {
+        System.out.println("\n6-5:指定した文字で指定サイズの三角形を表示する");
+        Six_Five(4, '箱');
+        
+        
+        System.out.println("\n6-5-EX:6-5のメソッドを使って、文字もサイズも違う3角形を3つ表示する");
+        Six_Five(4, '箱');
+        Six_Five(6, '□');
+        Six_Five(9, '8');
     }
 
     //6-6
