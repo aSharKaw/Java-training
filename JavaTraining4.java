@@ -346,40 +346,17 @@ public class JavaTraining4 {
 
         int num = Integer.parseInt(br.readLine());
         //int base_num = num;
-        boolean flug = false;
+        //boolean flug = false;
         
-        while(flug == false)
+        for(int i = 2; num > 1; i++)
         {
-            if(num % 2 == 0)
+            while((num % i) == 0)
             {
-                System.out.print("2 ");
-                num /= 2;
-            }
-            else if(num % 3 == 0)
-            {
-                System.out.print("3 ");
-                num /= 3;
-            }
-            else if(num % 5 == 0)
-            {
-                System.out.print("5 ");
-                num /= 5;
-            }
-            else if(num % 7 == 0)
-            {
-                System.out.print("7 ");
-                num /= 7;
-            }
-            else
-            {
-                if(num != 1)
-                {
-                    System.out.print(num);    
-                }
-                flug = true;
+                System.out.printf(i + " ");
+                num /= i;
             }
         }
-
+        
         //行間調整のため改行
         System.out.println();
     }
