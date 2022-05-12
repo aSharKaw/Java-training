@@ -8,22 +8,24 @@ public class JavaTraining6 {
     {
         //～_run関数は、問題にて追加処理を求められている場合に、mainの煩雑化を防ぐため使用します。
 
-        //System.out.println("6-1:2乗を返す");
-        //System.out.println(Six_One(8));
+        System.out.println("6-1:2乗を返す");
+        System.out.println(Six_One(8));
 
-        //System.out.println("\n6-2:2つの整数の平均を返す");
-        //System.out.println(Six_Two(8, 4));
+        System.out.println("\n6-2:2つの整数の平均を返す");
+        System.out.println(Six_Two(8, 4));
 
-        //Six_Three_run();
+        Six_Three_run();
 
-        //Six_Four_run();
+        Six_Four_run();
 
-        //System.out.println("\n6-5:指定した文字で指定サイズの三角形を表示する");
-        //Six_Five(4, '箱');
+        System.out.println("\n6-5:指定した文字で指定サイズの三角形を表示する");
+        Six_Five(4, '箱');
 
-        //Six_Six_run();
+        Six_Six_run();
 
         Six_Seven_run();
+
+        Six_Eight_run();
     }
 
     //6-1
@@ -166,6 +168,32 @@ public class JavaTraining6 {
             {
                 System.out.println(i);
             }
+        }
+    }
+
+    //6-8
+    static int Six_Eight(int num)
+    {
+        if( num == 0 || num == 1)
+        {
+            return num;
+        }
+        else
+        {
+            return Six_Eight( num - 2 ) + Six_Eight( num - 1 );
+        }
+    }
+
+    //6-8 追加分
+    static void Six_Eight_run()
+    {
+        System.out.println("\n6-8:フィボナッチ数列の n 番目の項を計算するメソッドを作成しなさい");
+        System.out.println("6番目の項は" + Six_Eight(6));
+
+        System.out.println("\n6-8-EX:6-8メソッドを使用して、11 番目から 20 番目までの項を表示");
+        for(int i = 11; i <= 20; i++)
+        {
+            System.out.println(i + "番目の項は" + Six_Eight(i));
         }
     }
 }
