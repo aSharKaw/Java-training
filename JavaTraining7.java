@@ -6,88 +6,81 @@ public class JavaTraining7 {
 
     public static void main(String[] args) throws IOException
     {
+        //問題の都合上、7-1～7-4のDog問題で纏めて回答、7-5～7-6のCoinCase問題で纏めて回答します
         //クラスはコード最下部に記載
-        //Seven_One();
-        //Seven_Two();
-        Seven_Three();
+
+        Dog_Answer();
+        Coins_Answer();
     }
 
 
 
-    //7-1
-    static void Seven_One()
+    //7-1～7-4 実行部分
+    static void Dog_Answer()
     {
-        System.out.println("7-1:指定のDogクラスを使用して、「名前の変更」「名前の表示」をしなさい");
-        Dog dog1 = new Dog();
-        dog1.SetName("たろう");
-        dog1.ShowProfile();
-    }
-
-    //7-2
-    static void Seven_Two()
-    {
-        System.out.println("7-2:7-1のDogクラスを改修して、「年齢の変更」「名前・年齢の表示」もできるようにしなさい");
-        Dog_7_2 dog1 = new Dog_7_2();
-        dog1.SetName("たろう");
-        dog1.SetAge(4);
-        dog1.ShowProfile();
-    }
-
-    //7-3
-    static void Seven_Three()
-    {
-        System.out.println("7-3:7-2のDogクラスを利用してして、2匹の犬のインスタンスを作成・表示しなさい");
-        Dog_7_2 dog1 = new Dog_7_2();
-        Dog_7_2 dog2 = new Dog_7_2();
+        System.out.println("7-1～7-4:Dogクラスを作成して、「犬種」「名前」「年齢」の設定と、犬のプロフィールを表示できるようにする");
         
+        Dog dog1 = new Dog("柴犬");
         dog1.SetName("たろう");
-        dog1.SetAge(4);
-
-        dog2.SetName("はなこ");
-        dog2.SetAge(7);
-
+        dog1.SetAge(2);
         dog1.ShowProfile();
+
+        Dog dog2 = new Dog("ポメラニアン");
+        dog2.SetName("ぽめぞう");
+        dog2.SetAge(6);
         dog2.ShowProfile();
     }
+
+    //7-5～7-6 実行部分
+    static void Coins_Answer() throws IOException
+    {
+        System.out.println("7-5～7-6:CoinCaseクラスを作成する");
+
+        CoinCase coins1 = new CoinCase();
+        System.out.println("10回AddCoinsして、各硬貨の枚数と額面、全硬貨の枚数と総額を表示する");
+        
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.println("追加する金額は？(日本円硬貨の額面で入力)");
+            int tmp_amount = Integer.parseInt(br.readLine());
+            System.out.println("追加する枚数は？");
+            int tmp_count = Integer.parseInt(br.readLine());
+            coins1.AddCoins(tmp_amount, tmp_count);
+        }
+        System.out.println("500円硬貨は " + coins1.GetCount(500) + "枚 で " + coins1.GetAmount(500) + "円 分入ってます。");
+        System.out.println("100円硬貨は " + coins1.GetCount(100) + "枚 で " + coins1.GetAmount(100) + "円 分入ってます。");
+        System.out.println("50円硬貨は " + coins1.GetCount(50) + "枚 で " + coins1.GetAmount(50) + "円 分入ってます。");
+        System.out.println("10円硬貨は " + coins1.GetCount(10) + "枚 で " + coins1.GetAmount(10) + "円 分入ってます。");
+        System.out.println("5円硬貨は " + coins1.GetCount(5) + "枚 で " + coins1.GetAmount(5) + "円 分入ってます。");
+        System.out.println("1円硬貨は " + coins1.GetCount(1) + "枚 で " + coins1.GetAmount(1) + "円 分入ってます。");
+        
+        System.out.println("財布の中には全部で " + coins1.GetCount() + "枚 の硬貨があり、総額は " + coins1.GetAmount() + "円 です。");
+    }
 }
 
-//7-1 指定クラス
+/*
+Dogクラス指定内容
+7-1:クラス原型の提供のみ（名前周りとShowProfileの原型）
+7-2:「年齢」のメンバー・メソッド追加とShowProfileで年齢も見えるようにする
+7-3:クラスの編集は無し(7-2で作成したクラスのインスタンスを2つ作成)
+7-4:「犬種」のコンストラクタ追加とShowProfileで犬種も見えるようにする
+*/
 class Dog
 {
+    private String Type;
     private String Name;
-
-    public void SetName( String nm )
-    {
-        Name = nm;
-    }
-
-    public void ShowProfile()
-    {
-        System.out.println( "名前は、" + Name + "です。" );
-    }
-}
-
-//7-1 回答
-/*
-練習問題 7 - 2
-前問の Dog クラスに、次の内容を追加しなさい。
-
-年齢を保持する int 型のメンバー変数。
-年齢を設定するメンバー・メソッド、SetAge。
-ShowProfile メソッドで名前、年齢を表示するようにする。
-*/
-class Dog_7_2
-{
-    private String Name;
-    //追加
     private int Age;
 
+
+    public Dog(String dog_type)
+    {
+        Type = dog_type;
+    }
     public void SetName( String nm )
     {
         Name = nm;
     }
 
-    //追加
     public void SetAge(int input_num)
     {
         Age = input_num;
@@ -95,7 +88,79 @@ class Dog_7_2
 
     public void ShowProfile()
     {
-        //Ageの表示を追加
-        System.out.println( "名前は " + Name + " で、年齢は " + Age + " です。" );
+        System.out.println("犬種:" + Type + "\n名前:" + Name + "\n年齢:" + Age + "\n");
+    }
+}
+
+/*
+CoinCaseクラス指定内容
+7-5:
+・500 円、100 円、50 円、10 円、5 円、1 円が、それぞれ何枚あるかを管理する。
+・AddCoins メソッドで硬貨を追加する。引数は硬貨の種類（ int ）と枚数（ int ）。
+・GetCount メソッドで、指定した硬貨が、何枚あるかを取得する。引数は硬貨の種類（ int ）、戻り値は枚数（ int ）。
+・GetAmount メソッドで硬貨の総額を取得する。戻り値は硬貨の総額( int )。
+7-6:
+・総ての硬貨の枚数を取得する、引数なしの GetCount メソッド。
+・指定した種類の硬貨の総額を取得する、引数のある GetAmount メソッド。
+*/
+class CoinCase
+{
+    //500,100,50,10,5,1の順で枚数を格納
+    private int Coins[] = new int[6];
+    private int CoinTypes[] = {500, 100, 50, 10, 5, 1};
+    
+    public void AddCoins(int input_amount, int input_count)
+    {
+        for(int i = 0; i < CoinTypes.length; i++)
+        {
+            if(input_amount == CoinTypes[i])
+            {
+                Coins[i] += input_count;
+            }
+        }
+    }
+
+    public int GetCount(int input_amount)
+    {
+        for(int i = 0; i < CoinTypes.length; i++)
+        {
+            if(input_amount == CoinTypes[i])
+            {
+                return Coins[i];
+            }
+        }
+        return 0;
+    }
+
+    public int GetCount()
+    {
+        int tmp = 0;
+        for(int i = 0; i < CoinTypes.length; i++)
+        {
+            tmp += Coins[i]; 
+        }
+        return tmp;
+    }
+
+    public int GetAmount(int input_amount)
+    {
+        for(int i = 0; i < CoinTypes.length; i++)
+        {
+            if(input_amount == CoinTypes[i])
+            {
+                return CoinTypes[i] * Coins[i];
+            }
+        }
+        return 0;
+    }
+
+    public int GetAmount()
+    {
+        int tmp = 0;
+        for(int i = 0; i < CoinTypes.length; i++)
+        {
+            tmp += CoinTypes[i] * Coins[i]; 
+        }
+        return tmp;
     }
 }
